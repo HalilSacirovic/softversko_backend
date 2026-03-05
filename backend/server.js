@@ -6,6 +6,11 @@ const productRoutes = require("./routes/productRoutes");
 
 const app = express();
 app.use(cors());
+const corsOptions = {
+  origin: "https://frontendsoftversko.netlify.app/", // Tvoj frontend URL
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use("/api", userRoutes);
